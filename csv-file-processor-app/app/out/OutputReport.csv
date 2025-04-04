@@ -1,0 +1,6 @@
+order_id,item_name,order_date,order_quantity,order_amount,item_quantity,remaining_quantity
+ord-001,aquarium light,2025-03-02,45,15000,230,185
+ord-002,oxygen pump,2025-03-01,3,3500,200,197
+ord-003,dual oxygen pump,2025-03-03,10,45000,100,90
+ord-001,automatic feeder,2025-03-02,30,65000,90,60
+ord-005,wave maker,2025-03-02,33,75000,120,87
