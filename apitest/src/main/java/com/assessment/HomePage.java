@@ -28,7 +28,7 @@ public class HomePage extends Application {
 
     // Initialize UI with fields and buttons
     private void initializeUI() {
-        // Layout for the HomePage
+
         VBox layout = new VBox();
         layout.setSpacing(10);
         layout.setPadding(new Insets(20));
@@ -52,7 +52,6 @@ public class HomePage extends Application {
         responseTextArea.setEditable(false);
         responseTextArea.setPrefHeight(100);
         
-        // Action when the "Create User" button is clicked
         createUserButton.setOnAction(e -> {
             String name = nameField.getText();
             String job = jobField.getText();
@@ -60,7 +59,7 @@ public class HomePage extends Application {
             if (name.isEmpty() || job.isEmpty()) {
                 responseLabel.setText("Please fill in both fields.");
             } else {
-                // Call the method to make the API request
+
                 createUser(name, job, responseTextArea);
             }
         });
@@ -80,7 +79,6 @@ public class HomePage extends Application {
         layout.getChildren().addAll(welcomeLabel, nameLabel, nameField, jobLabel, jobField,
                 createUserButton, responseLabel, responseTextArea, getUsersButton, supportButton, backToHomeButton);
 
-        // Set up scene and stage
         Scene scene = new Scene(layout, 400, 400);
         stage.setScene(scene);
         stage.setTitle("Home Page");
@@ -123,8 +121,8 @@ public class HomePage extends Application {
 
     // API Request to get a list of users
     private void getUsers(TextArea responseTextArea) {
-        // API endpoint to get user list
-        String apiUrl = "https://reqres.in/api/users?page=1";  // Example: page 1 of users
+
+        String apiUrl = "https://reqres.in/api/users?page=1";
 
         // Send GET request to the API
         HttpClient client = HttpClient.newHttpClient();
@@ -151,16 +149,16 @@ public class HomePage extends Application {
                 });
     }
 
-    // Helper method to format the response JSON (e.g., for readability)
+    // Helper method to format the response JSON
     private String formatResponse(String response) {
-        // For simplicity, we just add some line breaks for better readability
+
         return response.replace(",", ",\n").replace("{", "{\n").replace("}", "\n}");
     }
 
     // Navigate back to HomePage
     private void navigateBackToHome() {
-        // Reinitialize HomePage when going back to Home
-        new HomePage().start(stage);  // Call start() for the HomePage
+
+        new HomePage().start(stage);
     }
 
     // Navigate to the Support Page
@@ -171,6 +169,6 @@ public class HomePage extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);  // Launch the JavaFX application
+        launch(args); 
     }
 }
